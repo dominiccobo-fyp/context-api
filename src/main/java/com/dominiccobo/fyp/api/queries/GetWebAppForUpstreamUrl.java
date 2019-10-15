@@ -9,7 +9,7 @@ public class GetWebAppForUpstreamUrl {
     }
 
     public static class Result {
-        final String webAppUrl;
+        public final String webAppUrl;
 
         public Result(String webAppUrl) {
             this.webAppUrl = webAppUrl;
