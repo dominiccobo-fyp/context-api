@@ -10,8 +10,13 @@ import java.util.Optional;
  * information on a given topic.
  */
 public class QueryContext {
-    private GitContext gitContext;
-    private DocumentContext documentContext;
+    private final GitContext gitContext;
+    private final DocumentContext documentContext;
+
+    public QueryContext(GitContext gitContext, DocumentContext documentContext) {
+        this.gitContext = gitContext;
+        this.documentContext = documentContext;
+    }
 
     public Optional<GitContext> getGitContext() {
         return Optional.ofNullable(gitContext);
