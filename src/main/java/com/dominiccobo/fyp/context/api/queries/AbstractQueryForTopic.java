@@ -17,4 +17,12 @@ public abstract class AbstractQueryForTopic {
         this.topicToQueryFor = topicToQueryFor;
         this.context = context;
     }
+
+    public final TopicIdentifier getTopicToQueryFor() {
+        return topicToQueryFor;
+    }
+
+    public final QueryContext getContext() {
+        return context;
+    }
 }
