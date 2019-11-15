@@ -6,6 +6,14 @@ plugins {
 
 repositories {
     mavenLocal()
+    mavenCentral()
+    maven {
+        url 'https://pkgs.dev.azure.com/1422016/_packaging/1422016/maven/v1'
+        credentials {
+            username "AZURE_ARTIFACTS"
+            password System.getenv("AZURE_ARTIFACTS_ENV_ACCESS_TOKEN") ?: "${azureArtifactsGradleAccessToken}"
+        }
+    }
 }
 
 group = 'com.dominiccobo.fyp'
@@ -14,6 +22,15 @@ sourceCompatibility = '1.8'
 
 
 publishing {
+    repositories {
+         maven {
+             url 'https://pkgs.dev.azure.com/1422016/_packaging/1422016/maven/v1'
+             credentials {
+                 username "AZURE_ARTIFACTS"
+                 password System.getenv("AZURE_ARTIFACTS_ENV_ACCESS_TOKEN") ?: "${azureArtifactsGradleAccessToken}"
+             }
+         }
+    }
     publications {
         mavenJava(MavenPublication) {
             from components.java
