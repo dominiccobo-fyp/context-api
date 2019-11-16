@@ -1,4 +1,7 @@
 package com.dominiccobo.fyp.context.models;
 
-public abstract class WorkItem {
+public class WorkItem {
+
+    private String title;
+    private String body;
 }
