@@ -1,8 +1,13 @@
 package com.dominiccobo.fyp.context.models.git;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+
 public class GitRemoteURL {
 
-    private final String url;
+    private String url;
+
+    @JsonCreator
+    private GitRemoteURL() {}
 
     public GitRemoteURL(String url) {
         this.url = url;

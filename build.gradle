@@ -21,6 +21,10 @@ group = 'com.dominiccobo.fyp'
 version = versionDetails().lastTag
 sourceCompatibility = '1.8'
 
+dependencies {
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.10.0'
+}
+
 
 publishing {
     repositories {

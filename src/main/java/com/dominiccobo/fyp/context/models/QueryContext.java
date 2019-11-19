@@ -2,6 +2,7 @@ package com.dominiccobo.fyp.context.models;
 
 import com.dominiccobo.fyp.context.models.document.DocumentContext;
 import com.dominiccobo.fyp.context.models.git.GitContext;
+import com.fasterxml.jackson.annotation.JsonCreator;
 
 import java.util.Optional;
 
@@ -10,8 +11,12 @@ import java.util.Optional;
  * information on a given topic.
  */
 public class QueryContext {
-    private final GitContext gitContext;
-    private final DocumentContext documentContext;
+    private GitContext gitContext;
+    private DocumentContext documentContext;
+
+    // default constructor
+    @JsonCreator
+    private QueryContext() { }
 
     public QueryContext(GitContext gitContext, DocumentContext documentContext) {
         this.gitContext = gitContext;

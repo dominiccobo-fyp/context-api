@@ -1,5 +1,7 @@
 package com.dominiccobo.fyp.context.models.git;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+
 import java.util.Map;
 import java.util.Optional;
 
@@ -10,8 +12,10 @@ import java.util.Optional;
  */
 public class GitContext {
 
-    private final Map<GitRemoteIdentifier, GitRemoteURL> remotes;
-    private final GitRevision currentRevision;
+    private Map<GitRemoteIdentifier, GitRemoteURL> remotes;
+    private GitRevision currentRevision;
+    @JsonCreator
+    private GitContext() {}
 
     public GitContext(Map<GitRemoteIdentifier, GitRemoteURL> remotes, GitRevision currentRevision) {
         this.remotes = remotes;

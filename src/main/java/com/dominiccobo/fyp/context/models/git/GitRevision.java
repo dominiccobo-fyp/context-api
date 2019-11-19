@@ -1,8 +1,13 @@
 package com.dominiccobo.fyp.context.models.git;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+
 public class GitRevision {
-    private final String revision;
-    private final String branch;
+    private String revision;
+    private String branch;
+
+    @JsonCreator
+    private GitRevision() {}
 
     public GitRevision(String revision, String branch) {
         this.revision = revision;
