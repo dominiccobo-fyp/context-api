@@ -2,7 +2,7 @@ package com.dominiccobo.fyp.context.models;
 
 import java.util.Objects;
 
-public abstract class ContactDetails {
+public class ContactDetails {
     private final String meansName;
     private final String details;
 

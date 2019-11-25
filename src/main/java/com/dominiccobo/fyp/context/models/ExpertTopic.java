@@ -1,6 +1,6 @@
 package com.dominiccobo.fyp.context.models;
 
-public abstract class ExpertTopic {
+public class ExpertTopic {
     private final String topicName;
     private final String description;
 
