@@ -32,10 +32,10 @@ dependencies {
 publishing {
     repositories {
          maven {
-             url 'https://pkgs.dev.azure.com/1422016/_packaging/1422016/maven/v1'
+             url System.getenv("INTERNAL_REPO_URL")
              credentials {
-                 username "AZURE_ARTIFACTS"
-                 password System.getenv("AZURE_ARTIFACTS_ENV_ACCESS_TOKEN") ?: "${azureArtifactsGradleAccessToken}"
+                 username System.getenv("INTERNAL_REPO_USERNAME")
+                 password System.getenv("INTERNAL_REPO_PASSWORD") ?: "${azureArtifactsGradleAccessToken}"
              }
          }
     }
