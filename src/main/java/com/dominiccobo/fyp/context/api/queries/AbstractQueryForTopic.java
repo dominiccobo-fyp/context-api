@@ -1,5 +1,6 @@
 package com.dominiccobo.fyp.context.api.queries;
 
+import com.dominiccobo.fyp.context.models.Pagination;
 import com.dominiccobo.fyp.context.models.QueryContext;
 import com.dominiccobo.fyp.context.models.TopicIdentifier;
 
@@ -12,10 +13,12 @@ import com.dominiccobo.fyp.context.models.TopicIdentifier;
 public abstract class AbstractQueryForTopic {
     private final TopicIdentifier topicToQueryFor;
     private final QueryContext context;
+    private final Pagination pagination;
 
-    public AbstractQueryForTopic(TopicIdentifier topicToQueryFor, QueryContext context) {
+    public AbstractQueryForTopic(TopicIdentifier topicToQueryFor, QueryContext context, Pagination pagination) {
         this.topicToQueryFor = topicToQueryFor;
         this.context = context;
+        this.pagination = pagination;
     }
 
     public final TopicIdentifier getTopicToQueryFor() {
@@ -24,5 +27,9 @@ public abstract class AbstractQueryForTopic {
 
     public final QueryContext getContext() {
         return context;
+    }
+
+    public Pagination getPagination() {
+        return pagination;
     }
 }
