@@ -5,7 +5,7 @@ before_script:
 
 build:
   stage: build
-  script: ./gradlew --build-cache assemble -Dorg.gradle.daemon=false
+  script: ./gradlew --build-cache assemble
   artifacts:
     untracked: true
   cache:
@@ -17,7 +17,7 @@ build:
 
 test:
   stage: test
-  script: ./gradlew check -Dorg.gradle.daemon=false
+  script: ./gradlew check
   artifacts:
     untracked: true
   dependencies:
@@ -33,4 +33,4 @@ deploy:
   dependencies:
     - test
   stage: deploy
-  script: ./gradlew publish -Dorg.gradle.daemon=false
+  script: ./gradlew publish
