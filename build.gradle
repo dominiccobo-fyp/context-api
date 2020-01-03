@@ -5,17 +5,8 @@ plugins {
     id "com.palantir.git-version" version "0.12.2"
 }
 
-repositories {
-    mavenLocal()
-    mavenCentral()
-    maven {
-        url 'https://pkgs.dev.azure.com/1422016/_packaging/1422016/maven/v1'
-        credentials {
-            username "AZURE_ARTIFACTS"
-            password System.getenv("AZURE_ARTIFACTS_ENV_ACCESS_TOKEN") ?: "${azureArtifactsGradleAccessToken}"
-        }
-    }
-}
+gradle.ext.publishRepo = 'https://maven.pkg.github.com/dominiccobo-fyp/context-api'
+apply from: 'https://raw.githubusercontent.com/dominiccobo-fyp/build-common/master/repositories.gradle'
 
 group = 'com.dominiccobo.fyp'
 version = versionDetails().lastTag
@@ -26,22 +17,4 @@ dependencies {
     implementation group: 'org.apache.commons', name: 'commons-collections4', version: '4.4'
     testImplementation group: 'junit', name: 'junit', version: '4.12'
     testImplementation 'com.google.truth:truth:1.0'
-}
-
-
-publishing {
-    repositories {
-         maven {
-             url 'https://pkgs.dev.azure.com/1422016/_packaging/1422016/maven/v1'
-             credentials {
-                 username "AZURE_ARTIFACTS"
-                 password System.getenv("AZURE_ARTIFACTS_ENV_ACCESS_TOKEN") ?: "${azureArtifactsGradleAccessToken}"
-             }
-         }
-    }
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-        }
-    }
 }
