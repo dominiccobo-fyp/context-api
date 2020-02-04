@@ -3,8 +3,10 @@ package com.dominiccobo.fyp.context.models;
 import java.util.Objects;
 
 public class ContactDetails {
-    private final String meansName;
-    private final String details;
+    private String meansName;
+    private String details;
+
+    private ContactDetails() {}
 
     public ContactDetails(String meansName, String details) {
         this.meansName = meansName;
@@ -27,5 +29,13 @@ public class ContactDetails {
         int result = meansName != null ? meansName.hashCode() : 0;
         result = 31 * result + (details != null ? details.hashCode() : 0);
         return result;
+    }
+
+    public final String getMeansName() {
+        return meansName;
+    }
+
+    public final String getDetails() {
+        return details;
     }
 }

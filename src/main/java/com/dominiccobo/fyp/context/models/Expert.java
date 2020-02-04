@@ -16,11 +16,11 @@ public class Expert {
         return expertName;
     }
 
-    public List<ContactDetails> getContactDetails() {
+    public final List<ContactDetails> getContactDetails() {
         return contactDetails;
     }
 
-    public List<ExpertTopic> getExpertTopics() {
+    public final List<ExpertTopic> getExpertTopics() {
         return expertTopics;
     }
 

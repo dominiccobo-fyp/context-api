@@ -1,8 +1,10 @@
 package com.dominiccobo.fyp.context.models;
 
 public class ExpertTopic {
-    private final String topicName;
-    private final String description;
+    private String topicName;
+    private String description;
+
+    private ExpertTopic() {}
 
     public ExpertTopic(String topicName, String description) {
         this.topicName = topicName;
@@ -25,5 +27,13 @@ public class ExpertTopic {
         int result = topicName != null ? topicName.hashCode() : 0;
         result = 31 * result + (description != null ? description.hashCode() : 0);
         return result;
+    }
+
+    public final String getTopicName() {
+        return topicName;
+    }
+
+    public final String getDescription() {
+        return description;
     }
 }
